@@ -6,6 +6,7 @@ import Sample from './first';
 import randerList from './Folder1/randerList';
 import FolderSample from './Folder1/sampleFIle1';
 import reportWebVitals from './reportWebVitals';
+import ShoppingList from './Folder1/randerList';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,7 +15,7 @@ root.render(
     <Sample />
     <FolderSample />
     <Sample />
-    <randerList />
+    <ShoppingList />
     
   </React.StrictMode>
 );

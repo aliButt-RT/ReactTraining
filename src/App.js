@@ -1,7 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
-function App() {
+export default function App() {
+  const [count, setCount] = useState(0);
+
+  function handleClick(){
+    setCount(count + 1);
+   }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,8 +25,50 @@ function App() {
           Learn React
         </a>
       </header>
+
+      <br/><hr/>
+      <Mybutton count={count} onClick={handleClick}/>
+      <Mybutton count={count} onClick={handleClick}/>
+      <br/><hr/>
+      <Gallery/>
+      <br/><hr/>
     </div>
   );
 }
 
-export default App;
+function Mybutton({count, onClick}){
+    
+ 
+  return (
+   <button onClick={onClick}>
+     Clicked {count} times
+   </button>
+  );
+   
+  
+ }
+
+ function Profile() {
+  return (
+    <img
+      src="https://i.imgur.com/MK3eW3As.jpg"
+      alt="Katherine Johnson"
+    />
+  );
+}
+
+function Gallery() {
+  return (
+    <div>
+      <h1>Amazing scientists</h1>
+      <Profile />
+      <Profile />
+      <Profile />
+    </div>
+      
+  );
+}
+
+
+
+
