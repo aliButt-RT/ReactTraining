@@ -8,6 +8,40 @@
   pointer-events: none;
 }
 
+.App {
+  text-align: center;
+}
+
+.navigation {
+  margin-bottom: 20px;
+}
+
+.navigation button {
+  font-size: 18px;
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: #4e89ae;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.navigation button:hover {
+  background-color: #306b92;
+}
+
+.navigation button.active {
+  background-color: #1c4966;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Add your other component styles here */
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 10s linear;
