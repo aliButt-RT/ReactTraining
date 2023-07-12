@@ -32,9 +32,9 @@ function PosPage() {
         setIsLoading0(true);
         const result = await axios.get('https://fakestoreapi.com/products');
         setProducts(await result.data);
-        //setTimeout(() => {
-        //    setIsLoading0(false);
-        //}, 2000);
+        setTimeout(() => {
+           setIsLoading0(false);
+        }, 2000);
         setIsLoading0(false);
         
     }
