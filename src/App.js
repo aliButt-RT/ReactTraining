@@ -1,74 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-import { useState } from 'react';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import HomePage from "./Pages/HomePage";
+import PosPage from "./Pages/PosPage";
+import BasicTrainingPage from "./Pages/BasicTrainingPage";
 
-export default function App() {
-  const [count, setCount] = useState(0);
-
-  function handleClick(){
-    setCount(count + 1);
-   }
-
+function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-
-      <br/><hr/>
-      <Mybutton count={count} onClick={handleClick}/>
-      <Mybutton count={count} onClick={handleClick}/>
-      <br/><hr/>
-      <Gallery/>
-      <br/><hr/>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage></HomePage>} />
+        <Route path="/pos" element={<PosPage></PosPage>} />
+        <Route path="/basic-training" element={<BasicTrainingPage />} />
+      </Routes>
+    </Router>
   );
 }
 
-function Mybutton({count, onClick}){
-    
- 
-  return (
-   <button onClick={onClick}>
-     Clicked {count} times
-   </button>
-  );
-   
-  
- }
-
- function Profile() {
-  return (
-    <img
-      src="https://i.imgur.com/MK3eW3As.jpg"
-      alt="Katherine Johnson"
-    />
-  );
-}
-
-function Gallery() {
-  return (
-    <div>
-      <h1>Amazing scientists</h1>
-      <Profile />
-      <Profile />
-      <Profile />
-    </div>
-      
-  );
-}
-
-
-
-
+export default App;
